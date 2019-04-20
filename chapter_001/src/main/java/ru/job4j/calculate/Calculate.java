@@ -1,8 +1,8 @@
 package ru.job4j.calculate;
 /**
 *Class Calculate решение задачи 1.3 JavaDoc. Code convention
-@author Nikita
-@since 20.04.2019
+*@author Nikita
+*@since 20.04.2019
 */
 public class Calculate {
        /** 
