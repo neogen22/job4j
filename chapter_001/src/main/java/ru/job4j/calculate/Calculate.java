@@ -9,8 +9,8 @@ public class Calculate {
 		* Method main.
 		*@return Hello World
 		*/
-	public static void main (String[] args) {
-		System.out.println ("Hello World");
+	public static void main(String[] args) {
+		System.out.println("Hello World");
 		
 	}
 	/**
