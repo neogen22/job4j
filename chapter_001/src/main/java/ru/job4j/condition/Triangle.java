@@ -56,6 +56,6 @@ public class Triangle {
      */
 
     private boolean exist(double a, double c, double b) {
-        return (a > 0 && b > 0 && c > 0 && (a + b > c) || (b + c > a) || (a + c > b)) ? true : false;
+        return (a > 0 && b > 0 && c > 0 && (a + b > c) && (b + c > a) && (a + c > b)) ? true : false;
     }
 }
