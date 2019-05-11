@@ -35,10 +35,10 @@ public class PaintTest {
         assertThat(rst,
                 is(
                         new StringJoiner(System.lineSeparator(), "", System.lineSeparator())
-                                .add("   ^" )
-                                .add("  ^^" )
-                                .add(" ^^^" )
-                                .add("^^^^" )
+                                .add("   ^")
+                                .add("  ^^")
+                                .add(" ^^^")
+                                .add("^^^^")
                                 .toString()
                 )
         );

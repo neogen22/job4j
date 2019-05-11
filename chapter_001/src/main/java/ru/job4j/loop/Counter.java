@@ -7,7 +7,7 @@ public class Counter {
         int z2 = 0;
         for (; start <= finish; start++) {
             z = start % 2 == 0 ? start : 0;
-            z2+=z;
+            z2 += z;
         }
         sum = z2;
         return sum;

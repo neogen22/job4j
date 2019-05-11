@@ -9,7 +9,9 @@ public class Square {
         for (int index = rst2[0]; index < bound; index++) {
             rst2[index] = index + 1;
         }
-        for(int i = 0; i < rst2.length; i++) {rst[i] = rst2[i] * rst2[i]; }
+        for (int i = 0; i < rst2.length; i++) {
+            rst[i] = rst2[i] * rst2[i];
+        }
         return rst;
     }
 }
