@@ -15,20 +15,12 @@ public class ArrayChar {
         boolean result = false;
         char[] pref = prefix.toCharArray();
         char[] wrd = word.toCharArray();
-        char ch = 0;
-        if (wrd[0] == pref[0] && wrd[1] != pref[1]) {
-            result = false;
-        } else if (wrd[0] != pref[0]) {
-            result = false;
-        } else if (wrd[0] == pref[0] && wrd[1] == pref[1]) {
-            for (ch = 0; ch < pref.length - 1; ch++) {
-                if (wrd[ch + 1] == pref[ch + 1]) {
-                    result = true;
-                } else {
-                    result = false;
-                }
+        for (char ch = 0; ch < pref.length - 1; ch++) {
+            if (pref[ch + 1] == wrd[ch + 1]) {
+                result = true;
+            } else {
+                result = false;
             }
-        }
-        return result;
+        } return result;
     }
 }

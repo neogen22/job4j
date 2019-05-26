@@ -32,4 +32,11 @@ public class ArrayCharTest {
         boolean result = word.startsWith("Helloween", "Hez");
         assertThat(result, is(false));
     }
+
+    @Test
+    public void whenNotStartWithPrefix1ThenFalse() {
+        ArrayChar word = new ArrayChar();
+        boolean result = word.startsWith("Helloween", "Z");
+        assertThat(result, is(false));
+    }
 }
