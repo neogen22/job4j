@@ -4,15 +4,7 @@ public class MatrixCheck {
     public static boolean isWin(char[][] board) {
         boolean result = false;
         int temp = 0;
-        int q = 0;
-        int w = 0;
-        int z = 0;
-        int qqq = 0;
-        int qqqz = 0;
-        int qqqzz = 0;
-        int qqqzzz = 0;
-        int o = 0;
-        int oo = 0;
+        int temp2 = 0;
         for (int row = 0; row < board.length; row++) {
             for (int cell = 0; cell < board.length; cell++) {
                 char sign = board[row][cell];
@@ -20,74 +12,33 @@ public class MatrixCheck {
             }
         }
         for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[0][i] == 'X') {
-                    temp++;
-                    if (temp == board.length) {
-                        return true;
+            if (board[i][i] == 'X') {
+                for (int x = 0; x < board.length; x++) {
+                    if (board[0][i] == 'X' && board[x][i] == 'X') {
+                        temp++;
+                        System.out.println(temp);
+                        if (temp == board.length) {
+                            return true;
+                        }
                     }
                 }
-                break;
             }
-            if (board[1][i] == 'X') {
-                z++;
-                if (z == board.length) {
-                    return true;
-                }
-
-            }
-            if (board[2][i] == 'X') {
-                q++;
-                if (q == board.length) {
-                    return true;
-                }
-            }
-            if (board[3][i] == 'X') {
-                w++;
-                if (w == board.length) {
-                    return true;
-                }
-            }
-            if (board[4][i] == 'X') {
-                o++;
-                if (o == board.length) {
-                    return true;
-                }
-            }
-            if (board[i][0] == 'X') {
-                qqq++;
-                if (qqq == board.length) {
-                    return true;
-                }
-            }
-            if (board[i][1] == 'X') {
-                qqqz++;
-                if (qqqz == board.length) {
-                    return true;
-                }
-            }
-            if (board[i][2] == 'X') {
-                qqqzz++;
-                if (qqqzz == board.length) {
-                    return true;
-                }
-            }
-            if (board[i][3] == 'X') {
-                qqqzzz++;
-                if (qqqzzz == board.length) {
-                    return true;
-                }
-            }
-            if (board[i][4] == 'X') {
-                oo++;
-                if (oo == board.length) {
-                    return true;
-                }
-            }
-            System.out.println();
         }
-        return false;
+        for (int i = 0; i < board.length; i++) {
+            if (board[i][i] == 'X') {
+                for (int y = 0; y < board.length; y++) {
+                    if (board[i][0] == 'X' && board[i][y] == 'X') {
+                        temp2++;
+                        //System.out.println(temp2);
+                        if (temp2 == board.length) {
+                            return true;
+                        }
+                    }
+                }
+            }
+        } return false;
     }
+
     public static void main(String[] args) {
         char[][] hasWinVertical = {
                 {'_', '_', 'X', '_', '_'},
