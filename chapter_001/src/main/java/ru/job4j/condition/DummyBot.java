@@ -1,5 +1,4 @@
 package ru.job4j.condition;
-
 /**
  * @author Nick (n@yandex.ru)
  * @version $Id$

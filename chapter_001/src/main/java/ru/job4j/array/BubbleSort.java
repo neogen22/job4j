@@ -1,5 +1,4 @@
 package ru.job4j.array;
-
 public class BubbleSort {
     public int[] sort(int[] array) {
         for (int puzir = 0; puzir < array.length - 1; puzir++) {

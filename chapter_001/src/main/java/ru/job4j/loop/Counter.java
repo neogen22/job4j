@@ -1,5 +1,7 @@
 package ru.job4j.loop;
-//Метод должен вычислять сумму четныx чисел в диапазоне от start до finish;
+/**Метод должен вычислять сумму четныx чисел в диапазоне от start до finish;
+ *
+ */
 public class Counter {
     public int add(int start, int finish) {
         int sum = 0;

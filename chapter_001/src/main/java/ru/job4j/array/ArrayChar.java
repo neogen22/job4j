@@ -1,10 +1,8 @@
 package ru.job4j.array;
-
 /**
  * Обертка над строкой.
  */
 public class ArrayChar {
-
     /**
      * Проверяет. что слово начинается с префикса.
      *

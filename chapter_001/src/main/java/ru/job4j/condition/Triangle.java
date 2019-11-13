@@ -1,7 +1,5 @@
 package ru.job4j.condition;
-
 public class Triangle {
-
     /**
      * Метод вычисления периметра по длинам сторон.
      * <p>
@@ -19,7 +17,6 @@ public class Triangle {
         double w = v / 2;
         return w;
     }
-
     /**
      * Метод должен вычислить прощадь треугольканива.
      * <p>
@@ -38,12 +35,10 @@ public class Triangle {
         double c = new Point().distance(x1, y1, x3, y3);
         double p = period(a, b, c);
         if (this.exist(a, b, c)) {
-            // написать формулу для расчета площади треугольника.
             rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         }
         return rsl;
     }
-
     /**
      * Метод проверяет можно ли построить треугольник с такими длинами сторон.
      * <p>
@@ -54,7 +49,6 @@ public class Triangle {
      * @param c Длина от точки b c.
      * @return
      */
-
     private boolean exist(double a, double c, double b) {
         return (a > 0 && b > 0 && c > 0 && (a + b > c) && (b + c > a) && (a + c > b)) ? true : false;
     }
