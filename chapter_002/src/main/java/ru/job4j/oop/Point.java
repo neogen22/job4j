@@ -4,22 +4,18 @@ import static java.lang.Math.sqrt;
 import static java.lang.Math.pow;
 
 public class Point {
+
     private int x;
+
     private int y;
-    private double a;
-    private double b;
+
     public Point(int first, int second) {
         this.x = first;
         this.y = second;
     }
-    public double pointSqrt (Point that) {
-        this.a = pow(this.x - that.x, 2);
-        this.b = pow(this.y - that.y, 2);
-        return a + b;
 
-    }
     public double distance(Point that) {
-        return sqrt(pointSqrt(that));
+        return sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2));
     }
 
     public static void main(String[] args) {
