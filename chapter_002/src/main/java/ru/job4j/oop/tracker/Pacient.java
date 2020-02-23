@@ -2,7 +2,7 @@ package ru.job4j.oop.tracker;
 
 public class Pacient {
     private String name;
-    private String surname
+    private String surname;
     private int palata;
     public Pacient (String name, String surname, int palata) {
         this.name = name;
