@@ -32,9 +32,9 @@ public class EndsWithTest {
     @Test
     public void whenEndWithPrefixThenTrueTrue() {
         char[] word = {'K', 'a', 'm', 'i', 'k', 'a', 'd', 'z', 'e'};
-        char[] post = {'a', 'd', 'z', 'e'};
+        char[] post = {'a', 'r', 'z', 'e'};
         boolean result = EndsWith.endsWith(word, post);
-        assertThat(result, is(true));
+        assertThat(result, is(false));
     }
     @Test
     public void whenEndWithPrefixThenTrueTrueTrue() {
@@ -42,5 +42,12 @@ public class EndsWithTest {
         char[] post = {'e'};
         boolean result = EndsWith.endsWith(word, post);
         assertThat(result, is(true));
+    }
+    @Test
+    public void whenEndWithPrefixThenFalseFalseFalse() {
+        char[] word = {'0', '1', '2', '3'};
+        char[] post = {'5', '4', '3'};
+        boolean result = EndsWith.endsWith(word, post);
+        assertThat(result, is(false));
     }
 }
