@@ -37,10 +37,10 @@ public class Tracker {
     }
     public Item[] findByName(String key) {
         Item [] onlyNamesEqualsKeys = new Item [items.length];
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < items.length; i++) {
             String s = items[i].toString();
             if (s.equals(key)) {
-                items[i] = onlyNamesEqualsKeys[i];
+                onlyNamesEqualsKeys[i] = items[i];
                 size++;
             }
         }
