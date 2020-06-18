@@ -25,26 +25,18 @@ public class Tracker {
         return rsl;
     }
     public Item[] findAll() {
-        Item[] onlyNames = new Item[items.length];
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null) {
-                onlyNames[i] = items[i];
-                size++;
-            }
-        }
-        Item [] onlyNamesWithoutNull = Arrays.copyOf(onlyNames, size);
-        return onlyNamesWithoutNull;
+        return Arrays.copyOf(items, size);
+
     }
     public Item[] findByName(String key) {
-        Item [] onlyNamesEqualsKeys = new Item [items.length];
-        for (int i = 0; i < items.length; i++) {
-            String s = items[i].toString();
-            if (s.equals(key)) {
+        Item[] onlyNamesEqualsKeys = new Item [size];
+        for (int i = 0; i < size; i++) {
+            Item s = onlyNamesEqualsKeys[i];
+            if (key.equals(onlyNamesEqualsKeys[i].getName())) {
                 onlyNamesEqualsKeys[i] = items[i];
                 size++;
             }
         }
-        Item [] onlyNamesEqualsKeysSmallSize = Arrays.copyOf(onlyNamesEqualsKeys, size);
-        return onlyNamesEqualsKeysSmallSize;
+        return Arrays.copyOf(onlyNamesEqualsKeys, size);
     }
 }
