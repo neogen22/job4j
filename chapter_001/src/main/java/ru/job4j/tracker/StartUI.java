@@ -15,72 +15,41 @@ public class StartUI extends Tracker {
                 Item item = new Item();
                 item.setName(name);
                 tracker.add(item);
-                System.out.println(tracker.findById(1).getName());
+                System.out.println("Request was successfully added!");
             } else if (select == 1) {
                 for (int i = 0; i < tracker.findAll().length; i++) {
                     System.out.println(tracker.findAll()[i].getName());
                 }
             } else if (select == 2) {
-                int success = 0;
-                System.out.print("Please, enter ID for replace:");
-                Item item = new Item();
-                while (success != 9876) {
-                    int x = scanner.nextInt();
-                    if (x < tracker.findAll().length) {
-                        item.setId(x);
-                        System.out.print("Please, enter name for replace:" + System.lineSeparator());
-                        scanner.nextLine();
-                        item.setName(scanner.nextLine());
-                        tracker.add(item);
-                        System.out.print("Replace was successfully:" + System.lineSeparator());
-                        success = 9876;
-                    } else {
-                        System.out.print("Error, please, enter existing id:" + System.lineSeparator());
-                    }
-                }
+                System.out.print("Please, enter Id for replace:");
+                Item newItem = new Item();
+                int y = scanner.nextInt();
+                newItem.setId(y);
+                scanner.nextLine();
+                System.out.print("Please, enter name for replace:");
+                String yy = scanner.nextLine();
+                tracker.findAll()[y].setName(yy);
+                System.out.println(tracker.replace(y, newItem).getName());
+                System.out.print("Replace was successfully!" + System.lineSeparator());
             } else if (select == 3) {
-                int success = 0;
                 System.out.print("Please, enter Id for delete");
-                while (success != 9876) {
-                    int x = scanner.nextInt();
-                    scanner.nextLine();
-                    if (x < tracker.findAll().length) {
-                        for (int i = x; i < tracker.findAll().length - 1; i++) {
-                            tracker.findAll()[i].setName(tracker.findAll()[i + 1].getName());
-                        }
-                        Item item = new Item();
-                        tracker.del(item);
-                        System.out.print("Id was deleted successfully:" + System.lineSeparator());
-                        success = 9876;
-                    } else {
-                        System.out.print("Error, please, enter existing id:" + System.lineSeparator());
-                    }
+                int x = scanner.nextInt();
+                scanner.nextLine();
+                for (int i = x; i < tracker.findAll().length - 1; i++) {
+                    tracker.findAll()[i].setName(tracker.findAll()[i + 1].getName());
                 }
+                tracker.delete(x);
+                System.out.print("Id was deleted successfully!" + System.lineSeparator());
             } else if (select == 4) {
                 System.out.print("Please, enter Id for find item:");
                     int x = scanner.nextInt();
                     scanner.nextLine();
-                    if (x < tracker.findAll().length) {
-                        findById(x);
-                        System.out.println(tracker.findById(x).getName());
-                    } else {
-                        System.out.print("Error, this ID is not exist" + System.lineSeparator());
-                    }
+                    System.out.println(tracker.findById(x).getName());
             } else if (select == 5) {
-                int success = 0;
-                System.out.print("Please, enter name for find items:" + System.lineSeparator());
-                while (success != 9876) {
-                    String key = scanner.nextLine();
-                    for (int i = 0; i < tracker.findAll().length; i++) {
-                        if (tracker.findAll()[i].getName().equals(key)) {
-                            System.out.println(key);
-                            success = 9876;
-                        }
-                    }
-                    if (success != 9876) {
-                        System.out.print("Error, this name is not exist" + System.lineSeparator());
-                        break;
-                    }
+                System.out.print("Please, enter name for find id's:");
+                String key = scanner.nextLine();
+                for (int i = 0; i < tracker.findByName(key).length; i++) {
+                    System.out.println (key);
                 }
             }
             else if (select == 6) {

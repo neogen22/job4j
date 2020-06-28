@@ -13,10 +13,20 @@ public class Tracker {
         return item;
     }
 
-    public Item del(Item item) {
-        item.setId(ids--);
-        items[size--] = item;
-        return item;
+    public int delete(int x) {
+        size--;
+        return size;
+    }
+    public Item replace(int id, Item newItem) {
+        Item rsl = newItem;
+        for (int index = 0; index < size; index++) {
+            Item item = items[index];
+            if (item.getId() == id) {
+                rsl = item;
+                break;
+            }
+        }
+        return rsl;
     }
 
     public Item findById(int id) {
