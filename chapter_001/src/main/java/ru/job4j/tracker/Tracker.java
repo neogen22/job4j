@@ -13,6 +13,12 @@ public class Tracker {
         return item;
     }
 
+    public Item del(Item item) {
+        item.setId(ids--);
+        items[size--] = item;
+        return item;
+    }
+
     public Item findById(int id) {
         Item rsl = null;
         for (int index = 0; index < size; index++) {
