@@ -18,7 +18,7 @@ public class StartUI extends Tracker {
             } else if (Integer.parseInt(select) == 1) {
                 Item[] items = tracker.findAll();
                 for (int i = 0; i < items.length; i++) {
-                    System.out.println(items[i].getId());
+                    System.out.println(items[i].getId() + " - " + items[i].getName());
                 }
             } else if (Integer.parseInt(select) == 2) {
                 System.out.print("Please, enter Id for replace:");
