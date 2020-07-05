@@ -43,10 +43,9 @@ public class StartUI extends Tracker {
             } else if (Integer.parseInt(select) == 4) {
                 System.out.print("Please, enter Id for find item:");
                     String x = scanner.nextLine();
-                    scanner.nextLine();
                     Item item = tracker.findById(Integer.parseInt(x));
                     if (item != null) {
-                        System.out.println(item.getName());
+                        System.out.println(item.getId() + " - " + item.getName());
                     } else {
                         System.out.println("Заявка по id не найдена");
                     }
@@ -55,7 +54,7 @@ public class StartUI extends Tracker {
                 String key = scanner.nextLine();
                 Item[] items = tracker.findByName(key);
                 for (int i = 0; i < items.length; i++) {
-                    System.out.println (items[i].getName());
+                    System.out.println (items[i].getId() + " - " + items[i].getName());
                 }
             }
             else if (Integer.parseInt(select) == 6) {
